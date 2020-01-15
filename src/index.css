@@ -13,25 +13,57 @@ body {
 }
 
 #root {
-  margin: 10% 20% 20% 20%;
-  padding: 10px 20px 0px 20px;
+  margin: 4% auto;
+  width: 500px;
+  padding: 10px 20px ;
   background-color: #93dad9b3;
-  height: 500px;
+  min-height: 100px;
   box-shadow: 0 0 10px 2px black;
+  text-align-last: center;
 }
 
 input {
   padding: 5px;
   font-size: large;
   width: 100%;
+  border-radius: 5px;
   
 }
 
 .details {
-  margin: 5% 20% 0% 20%;
+  margin: 5% auto;
+  border-style: solid;
+  top: -80px;
+  position: relative;
+  text-align-last: center;
 }
 
 .entry {
-  margin: 5% 20% 0% 20%;
+  margin: 5% auto;
 }
 
+.circle{
+  position: relative;
+  left: 170px;
+  height: 120px;
+  width: 120px;
+  background-color: bisque;
+  border-radius: 60px;
+  z-index: 1;
+  border-style: solid;
+}
+
+img {
+  height: 115px;
+  width: 115px;
+  border-radius: 60px;
+}
+
+#head {
+  text-align-last: center;
+}
+
+h3 {
+  position: relative;
+  margin-top: 66px;
+}
