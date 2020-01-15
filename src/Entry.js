@@ -5,10 +5,7 @@ export default class Entry extends Component {
     super(props);
     this.state = {
       input: '',
-    }
-    // this.handleChange= this.handleChange.bind(this);
-    // this.handleSubmit= this.handleSubmit.bind(this);
-    // this.handlePress= this.handlePress.bind(this);
+    };
   }
 
   handleChange = (event) => {
@@ -27,13 +24,13 @@ export default class Entry extends Component {
     if(input !== ''){
       this.props.handleEntry(this.state.input);
     }
-    this.setState({input: ''})
+    this.setState({input: ''});
     document.querySelector('input').value = '';
   }
 
   render() {
     return (
-      <div className= 'bottom'>
+      <div className= 'entry'>
          <input placeholder="type username..." type="text" autoFocus onChange= {this.handleChange} onKeyDown = {this.handlePress} />
          <br></br>
          <button onClick={this.handleSubmit} > Search GitHub user   </button>

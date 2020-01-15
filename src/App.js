@@ -8,15 +8,15 @@ export default class App extends React.Component {
   {
     super(props);
     this.state = {
-      username: 'udaay',
+      username: '',
       name:'',
       pic:'',
       location:'',
       followers: '',
       public_repos:'',
-      url:''
+      html_url:''
     };
-    this.fetched = false;
+    this.fetched = true;
   }
 
   handleEntry = (username) => {
@@ -25,27 +25,25 @@ export default class App extends React.Component {
     request.open('GET',url)
     request.responseType = 'json';
     request.send();
-    // let r = request;
     request.onload = () => {
-      console.log(request.response);
-      let { name, location, followers, public_repos} = request.response;
-      this.setState({username,
+      let { login, name, location, followers, public_repos, message, html_url} = request.response;
+      this.fetched = message ? false : true;
+      this.setState({username: login,
       name,
       location,
       followers,
-      public_repos
-      })
+      public_repos,
+      html_url
+      });
     }
-    // Use setState to 
   }
 
   render() {
     return(
       <React.Fragment>
         <Entry handleEntry={this.handleEntry} />
-        if(true){
-          <Details user={this.state} />
-        }
+       { this.fetched && <Details user={this.state} />}
+       { this.fetched || <p className='details' > Oops user Not found </p>} 
       </React.Fragment>
     );
   }
